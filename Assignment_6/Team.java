@@ -6,15 +6,15 @@ public class Team {
 
     private String name;
     private String city;
-    private String division;
+    private String country;
     private List<Player> players; 
     public static int teamCount;
 
 
-    public Team(String name, String city, String division, List<Player> players) {
+    public Team(String name, String city, String country, List<Player> players) {
         this.name = name;
         this.city = city;
-        this.division = division;
+        this.country = country;
         this.players = players;
         teamCount++;
     }
@@ -35,12 +35,12 @@ public class Team {
         this.city = city;
     }
 
-    public String getDivision() {
-        return division;
+    public String getCountry() {
+        return country;
     }
 
-    public void setDivision(String division) {
-        this.division = division;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public List<Player> getPlayers() {
@@ -59,7 +59,7 @@ public class Team {
         }
         return "name \t: " + name +
                 "\ncity \t: " + city +
-                "\ndivision \t: " + division +
+                "\ndivision \t: " + country +
                 "\nplayers \t: " + playersNames;
     }
 }

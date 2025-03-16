@@ -18,7 +18,7 @@ public class Main {
         System.out.println("Book count : " + Book.bookCount);
 
         // 2. Employee object
-        Employee employee = new Employee("Alice Johnson", "alice.johnson@example.com", "123-456-7890", "Engineering");
+        Employee employee = new Employee("Cooper", "cooper@zoho.com", "9878675641", "Engineering");
         System.out.println(employee);
 
         // 3. Flight object
@@ -37,16 +37,16 @@ public class Main {
         System.out.println(movie);
         
         // 5a. Player object
-        Player player1 = new Player("John Doe", "Forward", 10);
-        Player player2 = new Player("Jane Smith", "Goalkeeper", 1);
-        Player player3 = new Player("Mike Brown", "Defender", 5);
+        Player player1 = new Player("Dhoni", "wicket keeper", 10);
+        Player player2 = new Player("Jadeja", "Allrounder", 1);
+        Player player3 = new Player("Virat Kholi", "Batsman", 5);
         List<Player> players = new ArrayList<>();
         players.add(player1);
         players.add(player2);
         players.add(player3);
 
         // 5b. Team object with players
-        Team team = new Team("Warriors", "New York", "East Division", players);
+        Team team = new Team("CSK", "Chennai", "India", players);
         System.out.println(team);
     }
 }
