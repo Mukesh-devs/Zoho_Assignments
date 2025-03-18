@@ -14,14 +14,8 @@ public class Movie {
     private List<String> cast;
     public static int totalMovie;
 
-    public Movie(String title, String genre, String director, short rating, int duration, LocalDate releaseDate, List<String> cast) {
+    public Movie(String title) {
         this.title = title;
-        this.genre = genre;
-        this.director = director;
-        this.rating = rating;
-        this.duration = duration;
-        this.releaseDate = releaseDate;
-        this.cast = cast;
         totalMovie++;
     }
 

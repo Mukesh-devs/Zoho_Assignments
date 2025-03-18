@@ -7,11 +7,7 @@ public class Employee {
     private String empPhone;
     private String empDept;
 
-    public Employee(String empName, String empEmail, String empPhone, String empDept)  {
-        this.empName = empName;
-        this.empEmail = empEmail;
-        this.empPhone = empPhone;
-        this.empDept = empDept;
+    public Employee()  {
         empId++; 
     }
 
@@ -47,12 +43,13 @@ public class Employee {
         return empDept;
     }
 
-    public String printEmployee() {
+    @Override
+    public String toString() {
         return "EmpId \t: " + empId + 
-            "Empname \t: " + empName + 
-            "EmpEmail \t: " + empEmail +
-            "EmpPhone \t: " + empPhone +
-            "EmpDept \t: " + empDept;
+            "\nEmpname \t: " + empName + 
+            "\nEmpEmail \t: " + empEmail +
+            "\nEmpPhone \t: " + empPhone +
+            "\nEmpDept \t: " + empDept;
     }
 
     

@@ -39,8 +39,8 @@ public class Book {
     public long getISBN() {
         return ISBN;
     }
-
-    public String showBook() {
+    @Override
+    public String toString() {
         return "Title \t: " + title + 
         "\nAuthor \t: " + Author + 
         "\nPrice \t: " + price + 

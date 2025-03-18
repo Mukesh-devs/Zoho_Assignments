@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Flight {
 
-    private int flightId;
+    private final int flightId;
     private String airline;
     private String source;
     private String destination;
@@ -14,7 +14,7 @@ public class Flight {
     private int seatCapacity;
     private boolean isAvailable;
 
-    Flight(int flightId) {
+    public Flight(int flightId) {
         this.flightId = flightId;
     }
 

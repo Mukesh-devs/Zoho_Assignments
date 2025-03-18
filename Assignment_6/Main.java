@@ -14,11 +14,14 @@ public class Main {
         book1.setTitle("Java Complete Reference");
         book1.setAuthor("James Gosling");
         book1.setPrice(1200);
-        System.out.println(book1.showBook());
-        System.out.println("Book count : " + Book.bookCount);
+        System.out.println(book1); 
 
         // 2. Employee object
-        Employee employee = new Employee("Cooper", "cooper@zoho.com", "9878675641", "Engineering");
+        Employee employee = new Employee();
+        employee.setName("Cooper");
+        employee.setEmail("cooper@zoho.com");
+        employee.setPhone("9878675641");
+        employee.setDept("Engineering");
         System.out.println(employee);
 
         // 3. Flight object
@@ -33,7 +36,14 @@ public class Main {
         System.out.println(flight);
 
         // 4. Movie object
-        Movie movie = new Movie("Goat", "Action", "Vp", (short) 9, 148, LocalDate.of(2024, 7, 16), Arrays.asList("Vijay","Meenakshi"));
+        Movie movie = new Movie("The Goat");
+        movie.setTitle("The Goat");
+        movie.setGenre("Drama");
+        movie.setDirector("John Doe");
+        movie.setRating((short) 8);
+        movie.setDuration(150);
+        movie.setReleaseDate(LocalDate.of(2024, 8, 20));
+        movie.setCast(Arrays.asList("Actor1", "Actor2"));
         System.out.println(movie);
         
         // 5a. Player object
