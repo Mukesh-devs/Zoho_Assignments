@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <form id="expense-form">
+            <input type="text" id="description" placeholder="Description" required>
+            <input type="number" id="amount" placeholder="Amount" required>
+            <button type="submit">Add Expense</button>
+        </form>
+        <h2>Expenses</h2>
+        <ul id="expense-list"></ul>
+    </div>
+    
+    <script>
+        document.getElementById('expense-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            addExpense();
+        });
+
+        function addExpense() {
+            const description = document.getElementById('description').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+            if (description && !isNaN(amount)) {
+                const expenseList = document.getElementById('expense-list');
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    ${description} - ₹${amount.toFixed(2)}
+                    <div>
+                        <button onclick="editExpense(this)">Edit</button>
+                        <button onclick="deleteExpense(this)">Delete</button>
+                    </div>
+                `;
+                expenseList.appendChild(li);
+                updateTotalSpending();
+                document.getElementById('expense-form').reset();
+            }
+        }
+
+        function editExpense(button) {
+            const li = button.parentElement.parentElement;
+            const [description, amount] = li.firstChild.textContent.split(' - ₹');
+            document.getElementById('description').value = description;
+            document.getElementById('amount').value = parseFloat(amount);
+            deleteExpense(button);
+        }
+
+        function deleteExpense(button) {
+            const li = button.parentElement.parentElement;
+            li.remove();
+            updateTotalSpending();
+        }
+
+        function updateTotalSpending() {
+            const expenseList = document.getElementById('expense-list').children;
+            let total = 0;
+            for (let i = 0; i < expenseList.length; i++) {
+                const amount = parseFloat(expenseList[i].firstChild.textContent.split(' - ₹')[1]);
+                total += amount;
+            }
+            document.getElementById('total-spending').textContent = total.toFixed(2);
+        }
+    </script>
+    <footer>
+        <h2>Total Spending: ₹<span id="total-spending">0</span></h2>
+    </footer>
+</body>
+</html>

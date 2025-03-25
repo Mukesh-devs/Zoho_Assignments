@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do Application</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header"> 
+        <h1>To-Do</h1>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Enter your task" />
+        </div>
+    </div>
+    <div id="cate" class="container">
+        <button onclick="addTask('urgent')" class="category urgent" id="urgent">
+            <h3>Urgent</h3>
+        </button>
+        <button onclick="addTask('personal')" class="category personal" id="personal">
+            <h3>Personal</h3>
+        </button>
+        <button onclick="addTask('work')" class="category work" id="work">
+            <h3>Work</h3>
+        </button>
+    </div>
+    <div id="comp" class="comp-container">
+        <div class="comp urgent" id="urgentc">
+            <h3>Urgent</h3>
+        </div>
+        <div class="comp personal" id="personalc">
+            <h3>Personal</h3>
+        </div>
+        <div class="comp work" id="workc">
+            <h3>Work</h3>
+        </div>
+    </div>
+</body>
+</html>
