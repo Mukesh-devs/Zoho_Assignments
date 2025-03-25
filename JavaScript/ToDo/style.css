@@ -1,3 +1,25 @@
+@media (max-width: 768px) {
+    .container, .comp-container {
+        flex-direction: column;
+        height: auto; /* Adjust height for vertical stacking */
+    }
+
+    .urgent, .personal, .work {
+        margin: 10px 0; /* Add spacing between sections */
+        width: 100%; /* Ensure full width for mobile view */
+    }
+
+    .input-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input, select, button {
+        width: 100%; /* Full width for inputs and buttons */
+    }
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -133,7 +155,7 @@ button:hover {
     background-color: #4da8ff;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .container {
         flex-direction: column;
     }
@@ -146,4 +168,4 @@ button:hover {
     input, select, button {
         width: 100%;
     }
-}
+} */
