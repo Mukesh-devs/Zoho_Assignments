@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+h3 {
+    font-family: Arial, sans-serif; 
+    color: #333;
+}
+p {
+    font-family: Arial, sans-serif; 
+    color: #666; 
+    font-size: 14px; 
+    line-height: 1.5;
+}
+#res {
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    padding: 16px; 
+    margin: 8px; 
+    max-width: 300px; 
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+header {
+    background-color: #ff6347;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+.container {
+    padding: 1rem;
+}
+.search-bar {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.search-bar input {
+    padding: 0.5rem;
+    width: 70%;
+    max-width: 400px;
+    margin-right: 0.5rem;
+}
+.search-bar button {
+    padding: 0.5rem 1rem;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.search-bar button:hover {
+    background-color: #e5533d;
+}
+.meal-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.meal-card img {
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ff6347;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
