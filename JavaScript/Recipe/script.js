@@ -8,17 +8,34 @@ function searchMeal() {
       if (data.meals) {
         data.meals.forEach(meal => {
           const mealDiv = document.createElement("div");
-        mealDiv.innerHTML = `
+          mealDiv.innerHTML = `
             <div id="res">
                 <h3>${meal.strMeal}</h3>
-                <img src="${meal.strMealThumb}" alt="${meal.strMeal}" style="width: 100%; border-radius: 8px; margin-bottom: 12px;"/>
-                <p>${meal.strInstructions.substring(0, 200)}...</p>
+                <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="res-img"/>
+                <p>${meal.strInstructions ? meal.strInstructions.substring(0, 200) : ''}...</p>
             </div>
-        `;
+          `;
           resultsDiv.appendChild(mealDiv);
         });
       } else {
         resultsDiv.innerHTML = "<p>No meals found.</p>";
       }
+    })
+    .catch(err => {
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "<p>Something went wrong. Please try again later.</p>";
     });
 }
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', () => {
+  const toTopBtn = document.getElementById('toTopBtn');
+  if (window.scrollY > 200) {
+    toTopBtn.style.display = 'block';
+  } else {
+    toTopBtn.style.display = 'none';
+  }
+});
